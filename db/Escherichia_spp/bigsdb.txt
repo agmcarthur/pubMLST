@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Escherichia locus/sequence definitions</title>
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css?v=20191202" media="Screen"/>
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css?v=20191202" media="Screen"/>
+<link rel="stylesheet" type="text/css" href="/css/fontawesome-all.css?v=20191202" media="Screen"/>
+<link rel="stylesheet" type="text/css" href="/css/bigsdb.css?v=20191202" media="Screen"/>
+<style type="text/css">
+<!--/* <![CDATA[ */
+.tooltip{display:inline}
+
+/* ]]> */-->
+</style>
+<script src="/javascript/jquery.min.js?v=20191120" type="text/Javascript"></script>
+<script src="/javascript/jquery-ui.min.js?v=20191120" type="text/Javascript"></script>
+<script src="/javascript/bigsdb.js?v=20191120" type="text/Javascript"></script>
+<script src="/javascript/cookieconsent.min.js" type="text/Javascript"></script>
+<script src="/javascript/packery.js?v=20191120" type="text/Javascript"></script>
+<script type="text/Javascript">//<![CDATA[
+$(document).ready(function() 
+    { 
+    	var $grid = $(".grid").packery({
+        	itemSelector: '.grid-item',
+  			gutter: 10,
+        });        
+        $(window).resize(function() {
+    		delay(function(){
+      			$grid.packery();
+    		}, 1000);
+ 		});
+    }  
+    	
+); 
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+window.addEventListener("load", function(){
+window.cookieconsent.utils.isMobile = () => false; //Don't float on mobile devices.
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#237afc"
+    },
+    "button": {
+      "background": "#fff",
+      "text": "#237afc"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "message": "This website requires the use of cookies for authentication and storing user preferences.",
+    "href": "/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=cookies"
+   }
+})});	
+
+//]]></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+<div class="topbar">
+	<style type="text/css" scoped>
+		div.topbar {
+		    font:Verdana,Arial,Helvetica,sans-serif;
+		    padding:0.3em 0.5em;
+		    border:1px solid #ddd;
+		    background:#88b;
+		    min-height:1.5em;
+		}
+		div.topbar a {
+		    color:#eee;
+		    margin-right:1em;
+		}
+		div.topbar a:hover {
+		    text-decoration:none;
+		    color:yellow;
+		}
+		@media (max-width:350px){span.topbar-link{display:none}}
+	</style>
+<span class="topbar-homelink"><a href="/">PubMLST</a></span>
+<span class="topbar-link"><a href="/escherichia">Database home</a></span>
+<span class="topbar-link"><a href="/bigsdb?db=pubmlst_escherichia_seqdef">Contents</a></span>
+</div>
+<div class="content" style="min-height: 400px">
+
+<div id="logindetails">
+<a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=login"><span class="fas fa-sign-in-alt" style="margin-right:0.3em"></span>Log in</a>
+</div>
+<div id="menubutton">
+<a style="cursor:pointer"><span class="fas fa-bars"></span></a>
+</div>
+<div id="menupanel"></div>
+<div id="fieldvalueshelp">
+<span id="toggle" style="display:none">Toggle: </span><a id="toggle_tooltips" href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=options&amp;toggle_tooltips=1" title="Toggle tooltips" style="display:none;margin-right:1em"><span class="fas fa-info-circle fa-lg"></span></a>
+</div>
+<h1>Escherichia locus/sequence definitions database</h1>
+<div class="box" id="banner">
+<p>Please note that PubMLST is not the authoritative database for MLST, cgMLST, or wgMLST for this organism. We synchronize alleles and scheme definitions for these schemes from <a href="https://enterobase.warwick.ac.uk/">Enterobase</a>. Submissions for allele and profile assignment need to be submitted to Enterobase - we cannot assign them.</p>
+
+</div>
+<div class="box" id="index"><div class="scrollable"><div class="grid">
+<div style="float:left;margin-right:1em" class="grid-item">
+<span class="main_icon fas fa-search fa-3x fa-pull-left"></span>
+<h2>Query database</h2><ul class="toplevel">
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=sequenceQuery">Sequence query</a> - query an allele sequence or genome.</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=batchSequenceQuery">Batch sequence query</a> - query multiple sequences in FASTA format.</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=tableQuery&amp;table=sequences">Sequence attribute search</a> - find alleles by matching criteria (all loci together)</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=alleleQuery&amp;table=sequences">Locus-specific sequence attribute search</a> - select, analyse and download specific alleles.</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=query">Search, browse or enter list of  profiles</a></li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=profiles">Search by combinations of  alleles</a> - including partial matching.</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=batchProfiles">Batch profile query</a> - lookup  profiles copied from a spreadsheet.</li>
+</ul></div>
+<div style="float:left; margin-right:1em" class="grid-item">
+<span class="main_icon fas fa-download fa-3x fa-pull-left"></span>
+<h2>Downloads</h2>
+<ul class="toplevel">
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=downloadAlleles&amp;tree=1">Allele sequences</a></li>
+
+<li style="white-space:nowrap"><form method="post" action="/bigsdb?db=pubmlst_escherichia_seqdef" enctype="multipart/form-data"><select name="scheme_id" >
+<option value="1">MLST (Achtman)</option>
+<option value="2">MLST (Pasteur)</option>
+</select><input type="hidden" name="db" value="pubmlst_escherichia_seqdef"  /> <button type="submit" name="page" value="downloadProfiles" class="smallbutton"><span class="fas fa-download" style="color:#44a"></span> Profiles</button>
+</form></li>
+</ul></div>
+<div style="float:left; margin-right:1em" class="grid-item">
+<span class="main_icon fas fa-cogs fa-3x fa-pull-left"></span>
+<h2>Option settings</h2>
+<ul class="toplevel">
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=options">Set general options</a>
+</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=tableQuery&amp;table=schemes">Scheme options</a></li>
+</ul></div>
+<div style="float:left; margin-right:1em" class="grid-item">
+<span class="main_icon fas fa-info-circle fa-3x fa-pull-left"></span>
+<h2>General information</h2><ul class="toplevel">
+<li>Number of sequences: 7,665,804</li>
+<li>Number of profiles: <a id="toggle1" class="showhide">Show</a>
+<a id="toggle2" class="hideshow">Hide</a><div class="hideshow"><ul>
+<li>MLST (Achtman): 9,443</li>
+<li>MLST (Pasteur): 971</li>
+</ul></div></li>
+<li>Last updated: 2020-01-22</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=version">About BIGSdb</a></li>
+</ul></div>
+</div></div></div>
+<div class="box" id="plugins"><div class="scrollable"><div class="grid">
+<div style="float:left; margin-right:1em" class="grid-item">
+<span class="plugin_icon far fa-save fa-3x fa-pull-left"></span>
+<h2 style="margin-right:1em">Export</h2><ul class="toplevel">
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=plugin&amp;name=FastaExport">Locus sequences</a>
+ - FASTA format
+</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=plugin&amp;name=ProfileExport">Profiles</a>
+</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=plugin&amp;name=SequenceExport">Profile sequences</a>
+ - XMFA / concatenated FASTA formats
+</li>
+</ul></div>
+<div style="float:left; margin-right:1em" class="grid-item">
+<span class="plugin_icon fas fa-chart-line fa-3x fa-pull-left"></span>
+<h2 style="margin-right:1em">Analysis</h2><ul class="toplevel">
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=plugin&amp;name=SequenceSimilarity">Sequence similarity</a>
+ - find sequences most similar to selected allele.
+</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=plugin&amp;name=SequenceComparison">Sequence comparison</a>
+ - display a comparison between two sequences.
+</li>
+<li><a href="/bigsdb?db=pubmlst_escherichia_seqdef&amp;page=plugin&amp;name=LocusExplorer">Locus Explorer</a>
+ - tool for analysing allele sequences stored for particular locus.
+</li>
+</ul></div>
+</div></div></div>
+</div>
+
+
+</body>
+</html>
