@@ -80,7 +80,19 @@ foreach $seq (keys %allele) {
 
 $novelmlstcount = 0;
 
-chomp(@files=<*.fasta>);
+chomp(@files1=<*.fasta>);
+chomp(@files2=<*.fa>);
+chomp(@files3=<*.fna>);
+undef @files;
+foreach $entry (@files1) {
+	push(@files,$entry);
+}
+foreach $entry (@files2) {
+	push(@files,$entry);
+}
+foreach $entry (@files3) {
+	push(@files,$entry);
+}
 foreach $file (@files) {
 	print OUTPUT "$file";
 	print STDERR "$file\n";
