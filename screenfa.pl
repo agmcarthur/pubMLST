@@ -26,9 +26,16 @@ foreach $entry (@files) {
 			next;
 		}
 		$line2 = uc($line);
-		if ($line2 =~ /[BDEFHIJKLMOPQRSVWXYZ]/) {
-			$error = 1;
+		@temp = split(//,$line2);
+		foreach $entry2 (@temp) {
+			unless ($entry2 =~ /[AGCTUN]/) {
+				print STDERR "$entry2\n";
+				$error = 1;
+			}
 		}
+#		if ($line2 =~ /[BDEFHIJKLMOPQRSVWXYZ]/) {
+#			$error = 1;
+#		}
 	}
 	close (INPUT);
 	if ($error == 1) {
